@@ -7,6 +7,7 @@ template <typename T>
 struct Node {
 	T data;
 	Node* next;
+	Node() : data(T{}), next(nullptr) {}
 	Node(const T& val) : data(val), next(nullptr) {}
 };
 
@@ -87,6 +88,22 @@ public:
 			delete temp;
 		}
 		tail = nullptr;
+	}
+
+	Node<T>* getHead() const {
+		return head;
+	}
+
+	Node<T>* getTail() const {
+		return tail;
+	}
+
+	void setHead(Node<T>* node) {
+		head = node;
+	}
+
+	void setTail(Node<T>* node) {
+		tail = node;
 	}
 };
 
